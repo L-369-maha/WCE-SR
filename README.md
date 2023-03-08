@@ -1,5 +1,4 @@
 # WCE-SR
-This repository is an official PyTorch implementation of the paper **"Multi-level Domain Adaptation for Wireless Capsule Endoscopy Image Super-Resolution"**.
 
 ## Dependencies
 * Python 3.7
@@ -13,17 +12,15 @@ This repository is an official PyTorch implementation of the paper **"Multi-leve
 * tqdm
 * PIL
 
-In this project, we propose a multi-level domain adaptation training framework for the SR of capsule endoscopy images.
 
 ## 🚉: Pre-Trained Models
 
-To achieve SR of capsule endoscopy images, download these [2x], [4x] models
+download these [2x], [4x] models
 ## 🚋: Training
 
-We first train adaptive downsampling model alone for 50 epochs, and then train domain adaptation SR model together for 50 epoch.
 The detailed training command as here:
 ```
-CUDA_VISIBLE_DEVICE=0 python train.py --name {EXP_PATH} --scale {SCALE} --adv_w 0.01 --batch_size 10 --patch_size_down 256 --decay_batch_size_sr 400000 --decay_batch_size_down 50000 --epochs_sr_start 51 --gpu cuda:0 --sr_model endosr --training_type endosr --joint --save_results --save_log
+CUDA_VISIBLE_DEVICE=0 python train.py
 ```
 with following options:
 - `EXP_PATH` is the folder name of experiment results
@@ -34,9 +31,5 @@ with following options:
 
 The detailed evaluation command as here:
 ```
-CUDA_VISIBLE_DEVICE=0 python predict.py --test_mode sr --name ADL_EndoSR_withoutWL/adl_endosr_x4 --scale 4 --crop 336 --pretrain_sr ./experiment/ADL_EndoSR_withoutWL/adl_endosr_x8/models/model_sr_last.pth --test_lr Capsule_Data/TestSet/Capsule_dataset02 --gpu cuda:0 --sr_model endosr --training_type endosr --save_results --realsr
+CUDA_VISIBLE_DEVICE=0 python predict.py
 ```
-
-## 🔥: E-Mail: Contact
-
-If you have any question, please email `2027194393@qq.com`.
