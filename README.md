@@ -17,7 +17,7 @@ In this project, we propose a multi-level domain adaptation training framework f
 
 ## 🚉: Pre-Trained Models
 
-To achieve SR of capsule endoscopy images, download these [2x](https://drive.google.com/file/d/1eA4xI5CkbZh6Z46sfQu8RtJgGx6RrOVx/view?usp=share_link), [4x](https://drive.google.com/file/d/1WJFxgYJEt4zAhj7Lo7PuWU3_z92rz3Iw/view?usp=sharing) models
+To achieve SR of capsule endoscopy images, download these [2x], [4x] models
 ## 🚋: Training
 
 We first train adaptive downsampling model alone for 50 epochs, and then train domain adaptation SR model together for 50 epoch.
