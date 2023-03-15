@@ -1,4 +1,4 @@
-# WCE-SR
+# SR
 
 ## Dependencies
 * Python 3.7
